@@ -35,13 +35,21 @@
                   placeholder="Pesquisar"
                 />
 
-                <button class="col-md-12" @click="add" >Adicionar</button>
+                <button class="col-md-12" @click="add">Adicionar</button>
               </form>
 
               Total de nomes: {{ lista.length }}
             </div>
             <ul>
-              <li v-for="item in lista">{{ item }}</li>
+              <li
+                v-for="(item, index) in lista"
+                class="d-flex justify-content-between"
+              >
+                {{ item }}
+                <button @click="remove(index)" class="btn btn-warning">
+                  X
+                </button>
+              </li>
             </ul>
           </div>
         </div>
